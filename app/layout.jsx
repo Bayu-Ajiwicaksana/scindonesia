@@ -8,6 +8,7 @@ const bricolage = Bricolage_Grotesque({
   variable: "--font-bricolage",
   display: "swap",
   weight: ["200", "300", "400", "500", "600", "700", "800"],
+  subsets: ["latin"],
 });
 
 // const oswald = Oswald({
@@ -20,6 +21,7 @@ const inter = Inter({
   variable: "--font-inter",
   display: "swap",
   weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
+  subsets: ["latin"],
 });
 
 // const roboto = Roboto({
