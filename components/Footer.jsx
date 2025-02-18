@@ -27,6 +27,7 @@ import {
 import Link from "next/link";
 import { Mail, Map, MapPin } from "lucide-react";
 import RotatingText from "./animation/RotatingText";
+import ContactUsBtn from "./button/ContactUsBtn";
 
 export default function Footer({ children, className, ...props }) {
   const targetScroll = useRef(null);
@@ -52,12 +53,14 @@ export default function Footer({ children, className, ...props }) {
             <h1 className="font-serif font-semibold text-6xl text-white">
               Ready to make an Impact with Us?
             </h1>
-            <Button
+            <ContactUsBtn
               variant="outline"
               className="bg-transparent border-white text-white hover:bg-white hover:text-zinc-900"
+              iconOnly={false}
+              withIcon={false}
             >
               Schedule a Consultation
-            </Button>
+            </ContactUsBtn>
           </div>
           <div className="bg-white rounded-2xl px-5 pb-5 pt-8 flex flex-col justify-between gap-[72px]">
             <div className="grid grid-cols-[1fr_.2fr_.4fr]">
