@@ -2,6 +2,7 @@
 import { cn } from "@/lib/utils";
 import Image from "next/image";
 import * as motion from "motion/react-client";
+import ClientItem from "./ClientItem";
 
 const variants = {};
 
@@ -21,24 +22,28 @@ export default function ClientList({ clients, children, className, ...props }) {
   );
 }
 
-function ClientItem({ client, index }) {
-  return (
-    <div className="relative h-[145px] aspect-video">
-      <motion.div
-        className="absolute inset-0"
-        style={{ filter: "grayscale(95%)" }}
-        whileHover={{
-          filter: "grayscale(0%)",
-        }}
-      >
-        <Image
-          src={client.logo}
-          alt={client.name}
-          fill
-          sizes="(min-width:640px) 50vw, 100vw"
-          className="object-contain"
-        />
-      </motion.div>
-    </div>
-  );
-}
+// function ClientItem({ client, index }) {
+//   return (
+//     <div className="relative h-[145px] aspect-video">
+//       <motion.div
+//         className="absolute inset-0"
+//         style={{ filter: "grayscale(95%)" }}
+//         whileHover={{
+//           filter: "grayscale(0%)",
+//         }}
+//         whileInView={{
+//           filter: "grayscale(0%)",
+//         }}
+//         viewport={{ margin: "0px 0px -30% 0px" }}
+//       >
+//         <Image
+//           src={client.logo}
+//           alt={client.name}
+//           fill
+//           sizes="(min-width:640px) 50vw, 100vw"
+//           className="object-contain"
+//         />
+//       </motion.div>
+//     </div>
+//   );
+// }

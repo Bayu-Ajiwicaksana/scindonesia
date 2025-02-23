@@ -2,15 +2,18 @@ import { cn } from "@/lib/utils";
 import { Button } from "../ui/button";
 import { Send } from "lucide-react";
 import Link from "next/link";
+import { useTranslations } from "next-intl";
 
 export default function ContactUsBtn({
-  children = "Let's Talk",
+  children,
   withIcon = true,
   iconOnly = false,
   icon,
   className,
   ...props
 }) {
+  const t = useTranslations("btn");
+  const label = children ?? t("contactUs.default");
   const Icon = icon ?? <Send />;
   return (
     <Button
@@ -22,7 +25,7 @@ export default function ContactUsBtn({
       asChild
     >
       <Link href={"/contact-us"}>
-        {!iconOnly && children}
+        {!iconOnly && label}
         {withIcon && Icon}
       </Link>
     </Button>

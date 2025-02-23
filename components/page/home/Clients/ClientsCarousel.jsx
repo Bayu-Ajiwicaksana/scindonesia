@@ -11,6 +11,7 @@ import {
 } from "@/components/ui/carousel";
 import { clients } from "@/lib/data";
 import Image from "next/image";
+import OpImage from "@/components/OpImage";
 
 export default function ClientsCarousel({ children, className, ...props }) {
   return (
@@ -24,11 +25,14 @@ export default function ClientsCarousel({ children, className, ...props }) {
         <div className="h-full w-1/3"></div>
         <div className="h-full w-1/3 bg-gradient-to-r from-transparent to-background-aziz"></div>
       </div>
-      <CarouselContent className="">
+      <CarouselContent className="-ml-7 lg:ml-0">
         {clients.map((c, i) => (
-          <CarouselItem key={c.key} className=" basis-1/3">
-            <div className="relative h-[65px]">
-              <Image
+          <CarouselItem
+            key={c.key}
+            className="pl-7 lg:pl-0 basis-1/2 md:basis-1/3"
+          >
+            <div className="relative h-[45px] md:h-[55px] lg:h-[65px]">
+              {/* <Image
                 src={c.logo}
                 alt={c.name}
                 fill
@@ -36,6 +40,11 @@ export default function ClientsCarousel({ children, className, ...props }) {
                 style={{
                   objectFit: "contain", // cover, contain, none
                 }}
+              /> */}
+              <OpImage
+                src={c.logo}
+                alt={c.name}
+                className="object-contain w-full h-full"
               />
             </div>
           </CarouselItem>

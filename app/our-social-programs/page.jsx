@@ -1,18 +1,16 @@
-import OurWorks from "@/components/page/home/OurWorks";
-import Programs from "@/components/page/home/Programs";
-import Testimonials from "@/components/page/home/Testimonials";
-import WhyChooseUs from "@/components/page/home/WhyChooseUs";
 import ProgramList from "@/components/page/programs/ProgramList";
 import ProgramsHero from "@/components/page/programs/ProgramsHero";
 import Subheading from "@/components/page/programs/Subheading";
+import { useTranslations } from "next-intl";
 // import { Button } from "@/components/ui/button";
 // import Image from "next/image";
 
 export default function OurSocialPrograms() {
+  const tSub = useTranslations("page.programs");
   return (
     <>
       <ProgramsHero />
-      <Subheading />
+      <Subheading translation={tSub("subheading")} />
       <ProgramList />
       {/* <WhyChooseUs /> */}
       {/* <Programs /> */}

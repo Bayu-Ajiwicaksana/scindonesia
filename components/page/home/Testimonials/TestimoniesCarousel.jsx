@@ -35,7 +35,10 @@ export default function TestimoniesCarousel({ children, className, ...props }) {
       </div> */}
       <CarouselContent className="">
         {testimonies.map((t, i) => (
-          <CarouselItem key={t.key} className=" basis-1/3">
+          <CarouselItem
+            key={t.key}
+            className="basis-full md:basis-1/2 lg:basis-1/3"
+          >
             <TestimonyCard testimony={t} />
           </CarouselItem>
         ))}

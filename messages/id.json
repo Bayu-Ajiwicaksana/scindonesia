@@ -1,0 +1,147 @@
+{
+  "textExpander" : {
+    "open" : "lebih sedikit",
+    "close" : "lebih banyak"
+  },
+  "btn" : {
+    "contactUs": {
+      "default": "Hubungi Kami"
+    }
+  },
+  "nav" : {
+    "home" : "Beranda",
+    "works" : "Proyek Kami",
+    "programs" : "Program Kami",
+    "aboutUs": "Tentang Kami",
+    "translate" : "Terjemahan"
+  },
+  "footer": {
+    "heading": "Siap Menciptakan Dampak Positif bersama Kami?",
+    "contactBtn" : "Jadwalkan Konsultasi",
+    "explore" : "Jelajahi",
+    "contact" : "Kontak",
+    "address" : "Sleman, Daerah Istimewa Yogyakarta, Indonesia, 55282"
+  },
+  "coreValues" : {
+    "heading" : "Core Values Kami",
+    "planning" : "Kami melakukan pemetaan sosial untuk memahami kebutuhan masyarakat.",
+    "implementing" : "Kami bekerja bersama Anda untuk menjalankan program yang efektif.",
+    "closing" : "Kami mengukur dampak menggunakan alat dan metode yang tepat.",
+    "evaluating" : "Kami mengevaluasi program untuk menciptakan langkah-langkah selanjutnya."
+  },
+  "page": {
+    "home": {
+      "hero": {
+        "heading": "Mitra CSR Strategis untuk Dampak Nyata.",
+        "subheading": "Kami membantu perusahaan dalam menerapkan CSR yang strategis, berdampak, dan berkelanjutan untuk masyarakat dan lingkungan."
+      },
+      "clients": "Perusahaan yang telah kami bantu",
+      "whyChooseUs": {
+        "heading": "Mengapa Memilih Kami?",
+        "subheading": "Kami percaya bahwa program CSR yang efektif memerlukan pendekatan yang strategis dan terencana. Sirkular Center Indonesia menawarkan layanan untuk membantu perusahaan Anda dalam menciptakan program CSR yang relevan, terukur, dan berdampak.",
+        "usps": {
+          "skills-and-experiences" : {
+            "label" : "Keterampilan dan Pengalaman",
+            "description" : "Kami telah bekerja dengan berbagai perusahaan nasional dan internasional."
+          },
+          "custom-approach" : {
+            "label" : "Pendekatan Kustom",
+            "description" : "Setiap program dirancang sesuai dengan kebutuhan spesifik perusahaan dan masyarakat."
+          },
+          "real-impact" : {
+            "label" : "Dampak Nyata",
+            "description" : "Kami memastikan bahwa setiap program menciptakan perubahan yang terukur dan berkelanjutan."
+          }
+        }
+      },
+      "programs": {
+        "heading": "Program yang Kami Tawarkan",
+        "subheading": "Solusi CSR yang Meningkatkan Kehidupan dan Memberikan Dampak Positif"
+      },
+      "works": {
+        "heading": "Proyek Terbaik Kami",
+        "subheading": "Solusi CSR yang Menyediakan Dampak Nyata",
+        "more" : "Lihat proyek lainnya",
+        "or" : "atau",
+        "add" : "Mulai program Anda bersama kami"
+      },
+      "testimonial": {
+        "heading": "Dari Klien Kami",
+        "subheading": "Berikut adalah pendapat mereka tentang bekerja dengan kami."
+      }
+    },
+    "programs" : {
+      "name" : "Program Sosial Kami",
+      "hero": "Solusi CSR yang Meningkatkan Kehidupan dan Memberikan Dampak Positif",
+      "subheading": "Di Sirkular Center Indonesia, kami percaya bahwa setiap perusahaan memiliki potensi untuk menciptakan perubahan yang berarti. Dengan pendekatan berbasis data dan praktik terbaik dalam Tanggung Jawab Sosial Perusahaan (CSR), kami menawarkan berbagai program sosial yang dapat memberikan dampak nyata, baik bagi masyarakat maupun lingkungan sekitar.",
+      "list" : "Program yang Kami Tawarkan"
+    },
+    "works" : {
+      "name" : "Proyek Kami",
+      "hero" : "Solusi CSR yang Menyediakan Dampak Nyata",
+      "clients" : {
+        "heading": "Perusahaan yang telah kami bantu",
+        "subheading" : "Lihat bagaimana kami membantu perusahaan menciptakan perubahan positif yang berkelanjutan melalui program CSR strategis."
+      },
+      "list" : {
+        "heading" : "Proyek Kami",
+        "subheading" : "Kami percaya bahwa program CSR yang efektif memerlukan pendekatan yang strategis dan terencana. Sirkular Center Indonesia menawarkan layanan untuk membantu perusahaan Anda dalam menciptakan program CSR yang relevan, terukur, dan berdampak.",
+        "add" : "Mulai program Anda bersama kami"
+      }
+    },
+    "aboutUs" : {
+      "hero" : {
+        "heading" : "Mewujudkan CSR yang bermakna dan berkelanjutan.",
+        "subheading" : "Kami adalah mitra korporat dalam mengembangkan dan mengelola program CSR berdasarkan pemetaan sosial, pelaksanaan yang efektif, dan evaluasi dampak yang transparan."
+      },
+      "subheading" : "Kami adalah mitra terpercaya bagi perusahaan yang ingin melaksanakan program CSR dengan cara yang terarah, efektif, dan berkelanjutan. Kami berkomitmen untuk membantu perusahaan Anda dalam merancang dan melaksanakan program CSR yang memberikan manfaat nyata bagi masyarakat lokal dan lingkungan.",
+      "vision" : {
+        "heading" : "Visi Kami",
+        "subheading" : "Mendorong perubahan sosial yang berkelanjutan dan inklusif melalui program CSR yang berdampak."
+      },
+      "mission" : {
+        "heading" : "Misi Kami",
+        "0" : "Membantu perusahaan dalam merancang program CSR yang relevan dan berkelanjutan.",
+        "1" : "Memberdayakan komunitas lokal melalui program pendidikan, ekonomi, kesehatan, lingkungan, dan budaya.",
+        "2" : "Mengukur dampak setiap program dengan alat dan metode yang transparan.",
+        "3" : "Meningkatkan kesadaran akan pentingnya tanggung jawab sosial di antara perusahaan nasional dan global."
+      }
+    },
+    "contactUs" : {
+      "heading" : "Ada pertanyaan?",
+      "subheading" : " Kami memiliki jawabannya. Mari bekerja sama!",
+      "input" : {
+        "fullName": {
+          "label" : "Nama Lengkap",
+          "error" : {
+            "min" : "Minimal 2 karakter",
+            "max" : "Maksimal 50 karakter",
+            "regex" : "Tidak dapat diawali atau diakhiri dengan spasi",
+            "empty" : "Minimal 2 dan maksimal 50 karakter"
+          }
+        },
+        "email": {
+          "label" : "Alamat Email",
+          "error" : {
+            "type" : "Mohon gunakan alamat email yang valid"
+          }
+        },
+        "phone": {
+          "label" : "Nomor HP / WhatsApp",
+          "error" : {
+            "type" : "Mohon gunakan nomor telepon yang valid"
+          }
+        },
+        "message": {
+          "label" : "Pesan Anda",
+          "placeholder" : "Masukkan pesan anda di sini",
+          "error" : {
+            "min" : "Minimal 2 and maksimal 250 karakter"
+          }
+        },
+        "send" : "Kirim"
+      }
+      
+    }
+  }
+}

@@ -1,0 +1,146 @@
+{
+  "textExpander" : {
+    "open" : "show less",
+    "close" : "show more"
+  },
+  "btn" : {
+    "contactUs": {
+      "default": "Let's Talk"
+    }
+  },
+  "nav" : {
+    "home" : "Home",
+    "works" : "Our Works",
+    "programs" : "Our Programs",
+    "aboutUs": "About Us",
+    "translate" : "Translate"
+  },
+  "footer": {
+    "heading": "Ready to make an Impact with Us?",
+    "contactBtn" : "Schedule a Consultation",
+    "explore" : "Explore",
+    "contact" : "Contact",
+    "address" : "Sleman, Special Region of Yogyakarta, Indonesia, 55282"
+  },
+  "coreValues" : {
+    "heading" : "Our Core Values",
+    "planning" : "We conduct social mapping to understand the needs of the community.",
+    "implementing" : "We work together with you to implement an effective program.",
+    "closing" : "We measure the impact using appropriate tools and methods.",
+    "evaluating" : "We are evaluating the program to create the next steps."
+  },
+  "page": {
+    "home": {
+      "hero": {
+        "heading": "Strategic CSR Partners for Real Impact.",
+        "subheading": "We assist companies in implementing strategic, impactful, and sustainable CSR for society and the environment."
+      },
+      "clients": "Companies we have helped",
+      "whyChooseUs": {
+        "heading": "Why Choose Us?",
+        "subheading": "We believe that an effective CSR program requires a strategic and planned approach. Sirkular Center Indonesia offers services to assist your company in creating a relevant, measurable, and impactful CSR program.",
+        "usps": {
+          "skills-and-experiences" : {
+            "label" : "Skills and Experiences",
+            "description" : "We have worked with various national and international companies."
+          },
+          "custom-approach" : {
+            "label" : "Custom Approach",
+            "description" : "Every program is designed according to the specific needs of the company and the community."
+          },
+          "real-impact" : {
+            "label" : "Real Impact",
+            "description" : "We ensure that each program creates measurable and sustainable change."
+          }
+        }
+      },
+      "programs": {
+        "heading": "Programs We Offered",
+        "subheading": "CSR Solutions That Improve Lives and Make a Positive Impact"
+      },
+      "works": {
+        "heading": "Our Top Works",
+        "subheading": "CSR Solutions Trail that Provides Real Impact",
+        "more" : "More of our works",
+        "or" : "or",
+        "add" : "Start your program with us"
+      },
+      "testimonial": {
+        "heading": "From Our Clients",
+        "subheading": "Here's what our clients had to say about working with Us"
+      }
+    },
+    "programs" : {
+      "name" : "Our Social Programs",
+      "hero": "CSR Solutions That Improve Lives and Make a Positive Impact",
+      "subheading": "At Sirkular Center Indonesia, we believe that every company has the potential to create meaningful change. With a data-driven approach and best practices in Corporate Social Responsibility (CSR), we offer a variety of social programs that can have a real impact, both for the community and the surrounding environment.",
+      "list" : "Programs We Offered"
+    },
+    "works" : {
+      "name" : "Our Works",
+      "hero" : "CSR Solutions Trail That Provides Real Impact",
+      "clients" : {
+        "heading": "Companies we have helped",
+        "subheading" : "See how we help companies create sustainable positive change through strategic CSR programs."
+      },
+      "list" : {
+        "heading" : "Our Works",
+        "subheading" : "We believe that an effective CSR program requires a strategic and planned approach. Sirkular Center Indonesia offers services to assist your company in creating a relevant, measurable, and impactful CSR program.",
+        "add" : "Start your program with us"
+      }
+    },
+    "aboutUs" : {
+      "hero" : {
+        "heading" : "Realizing meaningful and sustainable CSR.",
+        "subheading" : "We are corporate partners in developing and managing CSR programs based on social mapping, effective implementation, and transparent impact evaluation."
+      },
+      "subheading" : "We are a trusted partner for companies looking to implement CSR programs in a targeted, effective, and sustainable manner. We are dedicated to assisting your company in designing and executing CSR programs that provide tangible benefits to the local community and the environment.",
+      "vision" : {
+        "heading" : "Our Vision",
+        "subheading" : "Encouraging sustainable and inclusive social change through impactful CSR programs."
+      },
+      "mission" : {
+        "heading" : "Our Mission",
+        "0" : "Assisting the company in designing relevant and sustainable CSR programs.",
+        "1" : "Empowering local communities through education, economic, health, environmental, and cultural programs.",
+        "2" : "Measuring the impact of each program with transparent tools and methods.",
+        "3" : "Increasing awareness of the importance of social responsibility among national and global companies."
+      }
+    },
+    "contactUs" : {
+      "heading" : "Got Questions?",
+      "subheading" : "We have the answers. Let's work together!",
+      "input" : {
+        "fullName": {
+          "label" : "Full Name",
+          "error" : {
+            "min" : "Minimum 2 characters",
+            "max" : "Maximum 50 characters",
+            "regex" : "Cannot starts and end with whitespace",
+            "empty" : "Minimum 2 and maximum 50 characters"
+          }
+        },
+        "email": {
+          "label" : "Email Address",
+          "error" : {
+            "type" : "Please input a valid email address"
+          }
+        },
+        "phone": {
+          "label" : "Phone / WhatsApp number",
+          "error" : {
+            "type" : "Please input a valid phone number"
+          }
+        },
+        "message": {
+          "label" : "Your Message",
+          "placeholder" : "Enter your message here",
+          "error" : {
+            "min" : "Minimum 2 and maximum 250 characters"
+          }
+        },
+        "send" : "Send"
+      }
+    }
+  }
+}

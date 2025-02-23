@@ -61,7 +61,9 @@ function Char({ children, range, progress }) {
   return (
     <span className="relative">
       <span className="absolute opacity-10">{children}</span>
-      <motion.span style={{ opacity }}>{children}</motion.span>
+      <motion.span style={{ opacity, position: "relative" }}>
+        {children}
+      </motion.span>
     </span>
   );
 }

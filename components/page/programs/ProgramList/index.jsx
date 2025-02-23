@@ -1,14 +1,16 @@
-"use client";
 import Container from "@/components/layout/Container";
 import Section from "@/components/layout/Section";
 import { cn } from "@/lib/utils";
-import Image from "next/image";
-import ProgramsBg from "@/public/img/contents/programs-education.webp";
-import { programs } from "@/lib/data";
-import ParallaxBg from "@/components/animation/ParallaxBg";
+// import { programs } from "@/lib/data";
 import ProgramBgContainer from "./ProgramBgContainer";
+// import { useTranslations } from "next-intl";
+import { getAllPrograms } from "@/lib/actions/programs/get";
+import { getLocale, getTranslations } from "next-intl/server";
 
-export default function ProgramList({ children, className, ...props }) {
+export default async function ProgramList({ children, className, ...props }) {
+  const programs = await getAllPrograms();
+  const t = await getTranslations("page.programs");
+  const locale = await getLocale();
   return (
     <Section
       className={cn("px-0 xl:px-0", className)}
@@ -18,9 +20,13 @@ export default function ProgramList({ children, className, ...props }) {
       {/* <Image src={} /> */}
       <Container className={"pt-0 pb-8"}>
         <div className="relative">
-          <h1 className="text-3xl text-center my-24">Programs We Offered</h1>
+          <h1 className="text-3xl text-center my-24">
+            {/* Programs We Offered */}
+            {t("list")}
+          </h1>
           {programs.map((program, i) => (
             <ProgramBgContainer
+              locale={locale}
               program={program}
               index={i}
               key={`programs-list-${i}`}

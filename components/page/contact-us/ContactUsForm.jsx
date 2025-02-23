@@ -18,11 +18,12 @@ import {
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { useEffect } from "react";
+import { useCallback, useEffect, useMemo } from "react";
 import { Send, SendHorizonal } from "lucide-react";
 // import { router, usePage } from "@inertiajs/react";
 import toast from "react-hot-toast";
 import { z } from "zod";
+import { useLocale, useTranslations } from "next-intl";
 
 const phoneUtil = PhoneNumberUtil.getInstance();
 
@@ -34,48 +35,90 @@ const isPhoneValid = (phone) => {
   }
 };
 
-const contactUsFormSchema = z.object({
-  full_name: z
-    .string()
-    .min(2, {
-      // message: lang.get("contact_us.form.full_name.error.min_max"),
-      message: "Minimum 2 characters",
-    })
-    .max(50, {
-      // message: lang.get("contact_us.form.full_name.error.min_max"),
-      message: "Maximum 50 characters",
-    })
-    .regex(
-      /^[a-zA-Z]+(\s[a-zA-Z]+)*$/,
-      // lang.get("contact_us.form.full_name.error.regex")
-      "Cannot starts and end with whitespace"
-    )
-    .refine((val) => val.trim() !== "", {
-      // message: lang.get("contact_us.form.full_name.error.min_max"),
-      message: "Minimum 2 and maximum 50 characters",
-    }),
-  email: z.string().email({
-    // message: lang.get("contact_us.form.email.error"),
-    message: "Please input a valid email address",
-  }),
-  phone_number: z.string().refine((val) => isPhoneValid(val), {
-    // message: lang.get("contact_us.form.phone_number.error"),
-    message: "Please input a valid phone number",
-  }),
-  message: z
-    .string()
-    .min(2, {
-      // message: lang.get("contact_us.form.message.error"),
-      message: "Minimum 2 and maximum 50 characters",
-    })
-    .max(250),
-});
-
 export default function ContactUsForm({ children, className, ...props }) {
   // const {
   //   flash: { message },
   // } = usePage().props;
   // const flashMessage = message ? JSON.parse(message) : "";
+
+  const t = useTranslations("page.contactUs.input");
+  const locale = useLocale();
+
+  const contactUsFormSchema = useMemo(() => {
+    return z.object({
+      full_name: z
+        .string()
+        .min(2, {
+          // message: lang.get("contact_us.form.full_name.error.min_max"),
+          message: t("fullName.error.min"),
+        })
+        .max(50, {
+          // message: lang.get("contact_us.form.full_name.error.min_max"),
+          message: t("fullName.error.max"),
+        })
+        .regex(
+          /^[a-zA-Z]+(\s[a-zA-Z]+)*$/,
+          // lang.get("contact_us.form.full_name.error.regex")
+          t("fullName.error.regex")
+        )
+        .refine((val) => val.trim() !== "", {
+          // message: lang.get("contact_us.form.full_name.error.min_max"),
+          message: t("fullName.error.empty"),
+        }),
+      email: z.string().email({
+        // message: lang.get("contact_us.form.email.error"),
+        message: t("email.error.type"),
+      }),
+      phone_number: z.string().refine((val) => isPhoneValid(val), {
+        // message: lang.get("contact_us.form.phone_number.error"),
+        message: t("phone.error.type"),
+      }),
+      message: z
+        .string()
+        .min(2, {
+          // message: lang.get("contact_us.form.message.error"),
+          message: t("message.error.min"),
+        })
+        .max(250),
+    });
+  }, [locale]);
+
+  // const contactUsFormSchema = z.object({
+  //   full_name: z
+  //     .string()
+  //     .min(2, {
+  //       // message: lang.get("contact_us.form.full_name.error.min_max"),
+  //       message: t("fullName.error.min"),
+  //     })
+  //     .max(50, {
+  //       // message: lang.get("contact_us.form.full_name.error.min_max"),
+  //       message: t("fullName.error.max"),
+  //     })
+  //     .regex(
+  //       /^[a-zA-Z]+(\s[a-zA-Z]+)*$/,
+  //       // lang.get("contact_us.form.full_name.error.regex")
+  //       t("fullName.error.regex")
+  //     )
+  //     .refine((val) => val.trim() !== "", {
+  //       // message: lang.get("contact_us.form.full_name.error.min_max"),
+  //       message: t("fullName.error.empty"),
+  //     }),
+  //   email: z.string().email({
+  //     // message: lang.get("contact_us.form.email.error"),
+  //     message: t("email.error.type"),
+  //   }),
+  //   phone_number: z.string().refine((val) => isPhoneValid(val), {
+  //     // message: lang.get("contact_us.form.phone_number.error"),
+  //     message: t("phone.error.type"),
+  //   }),
+  //   message: z
+  //     .string()
+  //     .min(2, {
+  //       // message: lang.get("contact_us.form.message.error"),
+  //       message: t("message.error.min"),
+  //     })
+  //     .max(250),
+  // });
 
   const form = useForm({
     resolver: zodResolver(contactUsFormSchema),
@@ -114,6 +157,13 @@ export default function ContactUsForm({ children, className, ...props }) {
   //   }
   // }, [flashMessage.version]);
 
+  useEffect(() => {
+    const errorFields = Object.keys(form.formState.errors);
+    if (errorFields.length > 0) {
+      form.trigger(errorFields);
+    }
+  }, [locale, form.formState.errors]);
+
   return (
     <div
       className={cn("p-3 md:p-6 bg-background rounded-xl", className)}
@@ -129,7 +179,8 @@ export default function ContactUsForm({ children, className, ...props }) {
               <FormItem>
                 <FormLabel>
                   {/* {lang.get("contact_us.form.full_name.label")}: */}
-                  Full Name:
+                  {/* Full Name: */}
+                  {t("fullName.label")}
                 </FormLabel>
                 <FormControl>
                   <Input placeholder="John Doe" {...field} />
@@ -145,7 +196,8 @@ export default function ContactUsForm({ children, className, ...props }) {
               <FormItem>
                 <FormLabel>
                   {/* {lang.get("contact_us.form.email.label")}: */}
-                  Email Address:
+                  {/* Email Address: */}
+                  {t("email.label")}
                 </FormLabel>
                 <FormControl>
                   <Input
@@ -166,7 +218,8 @@ export default function ContactUsForm({ children, className, ...props }) {
                 <FormItem>
                   <FormLabel>
                     {/* {lang.get("contact_us.form.phone_number.label")} / WhatsApp: */}
-                    Phone / WhatsApp number:
+                    {/* Phone / WhatsApp number: */}
+                    {t("phone.label")}
                   </FormLabel>
                   <div className="flex gap-1">
                     <CountrySelector
@@ -249,7 +302,8 @@ export default function ContactUsForm({ children, className, ...props }) {
               <FormItem>
                 <FormLabel className="flex justify-between">
                   {/* <span>{lang.get("contact_us.form.message.label")}</span> */}
-                  <span>Your Message:</span>
+                  {/* <span>Your Message:</span> */}
+                  <span>{t("message.label")}</span>
                   <span className="text-xs text-neutral-400">
                     {field.value.length}/250
                   </span>
@@ -259,7 +313,8 @@ export default function ContactUsForm({ children, className, ...props }) {
                     // placeholder={lang.get(
                     //   "contact_us.form.message.placeholder"
                     // )}
-                    placeholder="Enter your message here"
+                    // placeholder="Enter your message here"
+                    placeholder={t("message.placeholder")}
                     {...field}
                   />
                 </FormControl>
@@ -273,7 +328,8 @@ export default function ContactUsForm({ children, className, ...props }) {
             disabled={form.formState.isSubmitting}
           >
             {/* {lang.get("contact_us.form.send_label")} */}
-            Send
+            {/* Send */}
+            {t("send")}
             <Send />
           </Button>
         </form>

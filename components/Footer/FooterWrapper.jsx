@@ -2,14 +2,14 @@
 import { useRef } from "react";
 
 import { cn } from "@/lib/utils";
-import Section from "./layout/Section";
-import Container from "./layout/Container";
+import Section from "@/components/layout/Section";
+import Container from "@/components/layout/Container";
 import Image from "next/image";
 import FooterBg from "@/public/img/contents/footer-bg.webp";
-import { Button, buttonVariants } from "./ui/button";
-import { Separator } from "./ui/separator";
-import AppLogo from "./AppLogo";
-import ParallaxBg from "./animation/ParallaxBg";
+import { Button, buttonVariants } from "@/components/ui/button";
+import { Separator } from "@/components/ui/separator";
+import AppLogo from "@/components/AppLogo";
+import ParallaxBg from "@/components/animation/ParallaxBg";
 
 import { useScroll } from "motion/react";
 
@@ -26,10 +26,23 @@ import {
 } from "@/components/ui/navigation-menu";
 import Link from "next/link";
 import { Mail, Map, MapPin } from "lucide-react";
-import RotatingText from "./animation/RotatingText";
-import ContactUsBtn from "./button/ContactUsBtn";
+import RotatingText from "@/components/animation/RotatingText";
+import ContactUsBtn from "@/components/button/ContactUsBtn";
 
-export default function Footer({ children, className, ...props }) {
+export default function FooterWrapper({
+  tHeading,
+  tBtnContact,
+  tExplore,
+  tContact,
+  tAddress,
+  tNavHome,
+  tNavWorks,
+  tNavPrograms,
+  tNavAbout,
+  children,
+  className,
+  ...props
+}) {
   const targetScroll = useRef(null);
 
   const { scrollYProgress } = useScroll({
@@ -45,13 +58,18 @@ export default function Footer({ children, className, ...props }) {
           ref={targetScroll}
         >
           <ParallaxBg
-            src={FooterBg}
+            src={"/img/contents/footer-bg.webp"}
             alt={"SCI's Footer Background"}
             scrollProgress={scrollYProgress}
+            className={"h-[120%]"}
+            imgClassName={"brightness-[.6]"}
+            fromTop="-15%"
+            toTop="15%"
           />
           <div className="flex flex-col items-center gap-y-16">
-            <h1 className="font-serif font-semibold text-6xl text-white">
-              Ready to make an Impact with Us?
+            <h1 className="font-serif font-semibold text-4xl md:text-6xl text-white text-center md:w-3/4">
+              {/* Ready to make an Impact with Us? */}
+              {tHeading}
             </h1>
             <ContactUsBtn
               variant="outline"
@@ -59,22 +77,25 @@ export default function Footer({ children, className, ...props }) {
               iconOnly={false}
               withIcon={false}
             >
-              Schedule a Consultation
+              {/* Schedule a Consultation */}
+              {tBtnContact}
             </ContactUsBtn>
           </div>
-          <div className="bg-white rounded-2xl px-5 pb-5 pt-8 flex flex-col justify-between gap-[72px]">
-            <div className="grid grid-cols-[1fr_.2fr_.4fr]">
-              <div className="w-fit h-full justify-between flex flex-col">
-                <AppLogo className={"w-[350px]"} />
+          <div className="bg-white rounded-2xl px-5 pb-5 pt-8 flex flex-col justify-between gap-5 lg:gap-[72px]">
+            <div className="flex flex-col md:grid md:grid-cols-2 lg:grid-cols-[1fr_.2fr_.4fr] gap-10 w-full">
+              <div className="w-full lg:w-fit h-full justify-between items-center lg:items-start flex flex-col order-last lg:order-first gap-y-5 mt-5 md:col-span-full lg:col-span-1">
+                <AppLogo className={"w-[225px] md:w-[295px] lg:w-[350px]"} />
                 <div className="flex items-center font-serif">
-                  <span className="text-4xl text-primary">#</span>
+                  <span className="text-xl md:text-2xl lg:text-4xl text-primary">
+                    #
+                  </span>
                   <RotatingText
                     texts={[
                       "SustainableSolutions",
                       "EmpoweringCommunities",
                       "LastingImpact",
                     ]}
-                    mainClassName="px-1 sm:px-1.5 md:px-2 text-primary overflow-hidden py-0.5 sm:py-1 md:py-1.5 justify-center rounded-lg w-fit text-3xl font-medium"
+                    mainClassName="px-1 sm:px-1.5 md:px-2 text-primary overflow-hidden py-0.5 sm:py-1 md:py-1.5 justify-center rounded-lg w-fit text-lg md:text-xl lg:text-3xl font-medium"
                     staggerFrom={"first"}
                     initial={{ y: "100%", opacity: 0 }}
                     animate={{ y: 0, opacity: 1 }}
@@ -86,21 +107,22 @@ export default function Footer({ children, className, ...props }) {
                   />
                 </div>
               </div>
-              <div className="flex flex-col gap-2">
-                <span className="font-serif text-sm font-semibold text-primary-accent px-4">
-                  Explore
+              <div className="flex flex-col gap-2 h-full">
+                <span className="font-serif text-3xl md:text-lg font-semibold text-primary-accent px-4 mb-4">
+                  {/* Explore */}
+                  {tExplore}
                 </span>
                 <NavigationMenu className="items-start">
-                  <NavigationMenuList className="flex-col space-x-0 gap-y-1 justify-start items-start">
+                  <NavigationMenuList className="flex-col space-x-0 gap-y-4 md:gap-y-1 justify-start items-start">
                     <NavigationMenuItem>
                       <Link href="/" legacyBehavior passHref>
                         <NavigationMenuLink
                           className={cn(
                             navigationMenuTriggerStyle(),
-                            "h-auto w-fit"
+                            "h-auto w-fit text-xl md:text-sm"
                           )}
                         >
-                          Home
+                          {tNavHome}
                         </NavigationMenuLink>
                       </Link>
                     </NavigationMenuItem>
@@ -109,10 +131,10 @@ export default function Footer({ children, className, ...props }) {
                         <NavigationMenuLink
                           className={cn(
                             navigationMenuTriggerStyle(),
-                            "h-auto w-fit"
+                            "h-auto w-fit text-xl md:text-sm"
                           )}
                         >
-                          Our Programs
+                          {tNavPrograms}
                         </NavigationMenuLink>
                       </Link>
                     </NavigationMenuItem>
@@ -121,10 +143,10 @@ export default function Footer({ children, className, ...props }) {
                         <NavigationMenuLink
                           className={cn(
                             navigationMenuTriggerStyle(),
-                            "h-auto w-fit"
+                            "h-auto w-fit text-xl md:text-sm"
                           )}
                         >
-                          Our Works
+                          {tNavWorks}
                         </NavigationMenuLink>
                       </Link>
                     </NavigationMenuItem>
@@ -133,25 +155,26 @@ export default function Footer({ children, className, ...props }) {
                         <NavigationMenuLink
                           className={cn(
                             navigationMenuTriggerStyle(),
-                            "h-auto w-fit"
+                            "h-auto w-fit text-xl md:text-sm"
                           )}
                         >
-                          About Us
+                          {tNavAbout}
                         </NavigationMenuLink>
                       </Link>
                     </NavigationMenuItem>
                   </NavigationMenuList>
                 </NavigationMenu>
               </div>
-              <div className="flex flex-col gap-2">
-                <span className="font-serif text-sm font-semibold text-primary-accent px-4">
-                  Contact
+              <div className="flex flex-col gap-2 h-full">
+                <span className="font-serif text-3xl md:text-lg font-semibold text-primary-accent px-4 mb-4">
+                  {/* Contact */}
+                  {tContact}
                 </span>
-                <div className="space-y-1">
+                <div className="space-y-4 md:space-y-1">
                   <Button
                     variant="link"
                     size="sm"
-                    className="px-4 w-fit justify-start text-current"
+                    className="px-4 w-fit justify-start text-current text-xl md:text-sm [&_svg]:size-5 md:[&_svg]:size-4"
                     asChild
                   >
                     <a href="mailto:hi@scindonesia.org">
@@ -161,17 +184,18 @@ export default function Footer({ children, className, ...props }) {
                   <div
                     className={cn(
                       buttonVariants({ variant: "link" }),
-                      "inline-flex items-start justify-start gap-2 px-4 w-fit hover:no-underline whitespace-break-spaces text-current"
+                      "inline-flex items-start justify-start gap-2 px-4 hover:no-underline text-current text-xl md:text-sm [&_svg]:size-5 md:[&_svg]:size-4 whitespace-normal h-auto w-fit"
                     )}
                   >
-                    <MapPin className="self-center" />
-                    Sleman, Special Region of Yogyakarta, Indonesia, 55282
+                    <MapPin className="self-start mt-1 md:mt-0.5" />
+                    {/* Sleman, Special Region of Yogyakarta, Indonesia, 55282 */}
+                    <span className="text-wrap">{tAddress}</span>
                   </div>
                 </div>
               </div>
             </div>
             <div className="space-y-3">
-              <Separator className="w-full h-[2px] rounded-full bg-zinc-300" />
+              <Separator className="w-full h-[2px] rounded-full bg-zinc-100" />
               <small className="text-center block">
                 Copyright &#64; 2025 Sirkular Center Indonesia
               </small>

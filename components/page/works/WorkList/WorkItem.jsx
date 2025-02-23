@@ -14,8 +14,9 @@ import TextExpander from "@/components/TextExpander";
 import useMediaQuery from "@/hooks/useMediaQuery";
 import { useAnimate, useInView } from "motion/react";
 import { useEffect } from "react";
+import OpImage from "@/components/OpImage";
 
-export default function WorkItem({ data, className, ...props }) {
+export default function WorkItem({ locale, data, className, ...props }) {
   const { isSM, isMD, isLG } = useMediaQuery();
   const [scope, animate] = useAnimate();
   const isInView = useInView(scope, { once: false, amount: 0.5 });
@@ -33,7 +34,12 @@ export default function WorkItem({ data, className, ...props }) {
     >
       <div className="contents sm:grid md:contents lg:grid grid-cols-2 gap-6">
         <CardContent className="pt-6 sm:pe-0 md:pe-6 lg:pe-0 sm:pb-0 md:pb-6 lg:pb-0 flex flex-col items-center gap-4">
-          <img src={data.programs.thumbnail} alt="" className="rounded-lg" />
+          {/* <img src={data.programs.thumbnail} alt="" className="rounded-lg" /> */}
+          <OpImage
+            src={data.programs.thumbnail}
+            alt=""
+            className="rounded-lg object-contain"
+          />
           {(!isSM || isMD) && !isLG && (
             <img
               src={data.clients.logo}
@@ -61,7 +67,7 @@ export default function WorkItem({ data, className, ...props }) {
             />
           )}
           <CardTitle className="flex justify-between text-lg sm:pt-4 md:pt-0 lg:pt-4">
-            {data.title}
+            {data[`title_${locale}`] ?? data.title}
           </CardTitle>
           <CardDescription className="flex flex-col items-start gap-3">
             {/* <div className="flex items-center gap-2">
@@ -72,17 +78,27 @@ export default function WorkItem({ data, className, ...props }) {
             </div>
           </CardDescription>
           {(!isSM || isMD) && !isLG && (
-            <TextExpander className={"pt-3"}>{data.description}</TextExpander>
+            <TextExpander className={"pt-3"}>
+              {data[`description_${locale}`] ?? data.description}
+            </TextExpander>
           )}
         </CardHeader>
       </div>
       <CardContent className="text-neutral-600 space-y-5">
         {isSM && !isMD ? (
-          <TextExpander className={"pt-3"}>{data.description}</TextExpander>
+          <TextExpander className={"pt-3"}>
+            {data[`description_${locale}`] ?? data.description}
+          </TextExpander>
         ) : (
-          isLG && <p className={"pt-3"}>{data.description}</p>
+          isLG && (
+            <p className={"pt-3"}>
+              {data[`description_${locale}`] ?? data.description}
+            </p>
+          )
         )}
-        <ProjectBeneficiaries impacts={data.impact} />
+        <ProjectBeneficiaries
+          impacts={data[`impact_${locale}`] ?? data.impact}
+        />
       </CardContent>
     </Card>
   );

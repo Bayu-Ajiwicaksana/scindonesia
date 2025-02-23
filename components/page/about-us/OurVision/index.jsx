@@ -1,49 +1,20 @@
-"use client";
-import ParagraphFade from "@/components/animation/ParagraphFade";
-import Container from "@/components/layout/Container";
-import Section from "@/components/layout/Section";
-import { cn } from "@/lib/utils";
-import {
-  useScroll,
-  useTransform,
-  motion,
-  useMotionTemplate,
-  useAnimate,
-  useInView,
-} from "motion/react";
-import { useEffect, useRef } from "react";
+import VisionBgContainer from "./VisionBgContainer";
 
-export default function OurVision({ children, className, ...props }) {
-  const targetScroll = useRef(null);
-  // const [scope, animate] = useAnimate();
-  // const isInView = useInView(scope, { once: false });
-
-  const { scrollYProgress } = useScroll({
-    target: targetScroll,
-    offset: ["start start", "end end"],
-  });
-
+export default function OurVision({
+  tHeading,
+  tSubheading,
+  children,
+  className,
+  ...props
+}) {
   return (
-    <Section
-      className={cn("py-8 h-[150vh]", className)}
-      ref={targetScroll}
-      // style={{ opacity }}
+    <VisionBgContainer
+      className={"flex flex-col justify-center items-center gap-6"}
     >
-      <Container
-        className={
-          "min-h-[80vh] p-8 sticky top-[80px] grid grid-cols-[.6fr_1fr] gap-10"
-        }
-      >
-        <h2 className="text-4xl font-medium self-center">Our Vision</h2>
-        <ParagraphFade
-          progress={scrollYProgress}
-          text="Encouraging sustainable and inclusive social change through impactful CSR programs"
-          className={
-            "text-6xl leading-tight justify-center font-semibold font-serif h-fit self-center"
-          }
-          spacing="mr-3 h-fit"
-        />
-      </Container>
-    </Section>
+      <h2 className="font-serif text-6xl text-white font-bold">{tHeading}</h2>
+      <q className="text-4xl italic text-white w-2/3 text-center font-light">
+        {tSubheading}
+      </q>
+    </VisionBgContainer>
   );
 }

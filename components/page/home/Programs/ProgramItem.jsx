@@ -3,8 +3,10 @@ import { motion, progress, useTransform } from "motion/react";
 // import { useRef } from "react";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
+import OpImage from "@/components/OpImage";
 
 export default function ProgramItem({
+  locale,
   programsLength,
   program,
   index,
@@ -38,24 +40,36 @@ export default function ProgramItem({
     >
       <div
         className={cn(
-          "p-8 rounded-3xl border border-foreground h-[87vh] grid grid-cols-[.7fr_1fr] gap-8 overflow-hidden",
+          "p-5 md:p-8 rounded-3xl border border-foreground h-[75vh] flex flex-col md:h-[87vh] lg:grid lg:grid-cols-[.7fr_1fr] gap-8 overflow-hidden",
           odd
             ? "bg-foreground text-background"
             : "bg-background text-foreground"
         )}
       >
-        <div className="h-full flex flex-col justify-between">
-          <h3 className="font-semibold text-6xl font-serif">{program.name}</h3>
-          <p className="text-3xl">{program.description}</p>
+        <div className="h-fit md:h-full self-end flex flex-col md:grid md:grid-cols-[.5fr_1fr] lg:flex lg:flex-col justify-between gap-3 md:gap-8 lg:gap-3">
+          <h3 className="font-semibold text-4xl lg:text-6xl font-serif">
+            {program[`name_${locale}`] ?? program.name}
+          </h3>
+          <p className="text-xl md:text-2xl lg:text-3xl">
+            {program[`description_${locale}`] ?? program.description}
+          </p>
         </div>
-        <div className="relative overflow-hidden w-full h-full">
-          <Image
+        <div className="relative overflow-hidden h-full order-first lg:order-last aspect-auto">
+          {/* <Image
             src={program.img}
             alt={program.name}
             fill
             sizes="(min-width: 640px) 50vw, 100vw"
             placeholder="blur"
             className="absolute rounded-xl object-cover"
+            style={{
+              zIndex: programsLength - (programsLength - index) + 1,
+            }}
+          /> */}
+          <OpImage
+            src={program.thumbnail}
+            alt={program.name}
+            className="absolute rounded-xl object-center w-full h-full"
             style={{
               zIndex: programsLength - (programsLength - index) + 1,
             }}

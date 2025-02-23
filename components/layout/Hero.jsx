@@ -6,6 +6,7 @@ import Image from "next/image";
 import ParallaxBg from "../animation/ParallaxBg";
 import { useRef } from "react";
 import { useScroll } from "motion/react";
+import useMediaQuery from "@/hooks/useMediaQuery";
 
 export default function Hero({
   bgImage,
@@ -20,22 +21,26 @@ export default function Hero({
     target: targetScroll,
     offset: ["start 80px", "end start"],
   });
+  const { isLG } = useMediaQuery();
   return (
     <Section className={cn("", className.section)}>
       <Container
-        className={cn("h-[90vh] xl:pb-5 xl:pt-2", className.container)}
+        className={cn(
+          "h-screen lg:h-[90vh] xl:pb-5 pt-0 pb-2 xl:pt-2",
+          className.container
+        )}
         {...props}
       >
         <div
-          className="relative h-full w-full rounded-[32px] overflow-hidden"
+          className="relative h-full w-full rounded-b-[32px] md:rounded-[32px] overflow-hidden"
           ref={targetScroll}
         >
           <ParallaxBg
             src={bgImage}
             alt={bgAlt}
             scrollProgress={scrollYProgress}
-            fromTop="-30%"
-            toTop="30%"
+            fromTop={isLG ? "-30%" : "-10%"}
+            toTop={isLG ? "30%" : "10%"}
             className={bgClass}
           />
           {/* <Image
