@@ -40,9 +40,9 @@ export default function ProgramItem({
     >
       <div
         className={cn(
-          "p-5 md:p-8 rounded-3xl border border-foreground h-[75vh] flex flex-col md:h-[87vh] lg:grid lg:grid-cols-[.7fr_1fr] gap-8 overflow-hidden",
+          "p-5 md:p-8 rounded-3xl border border-primary h-[70vh] flex flex-col md:h-[80vh] lg:grid lg:grid-cols-[.7fr_1fr] gap-8 overflow-hidden",
           odd
-            ? "bg-foreground text-background"
+            ? "bg-primary text-primary-foreground"
             : "bg-background text-foreground"
         )}
       >
@@ -50,7 +50,7 @@ export default function ProgramItem({
           <h3 className="font-semibold text-4xl lg:text-6xl font-serif">
             {program[`name_${locale}`] ?? program.name}
           </h3>
-          <p className="text-xl md:text-2xl lg:text-3xl">
+          <p className="text-lg md:text-xl lg:text-2xl">
             {program[`description_${locale}`] ?? program.description}
           </p>
         </div>

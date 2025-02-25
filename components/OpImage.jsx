@@ -29,7 +29,7 @@ const OpImage = ({ src, alt = "", className = "" }) => {
       alt={alt}
       className={cn(
         "object-cover transition-opacity duration-500 ease-in-out",
-        loaded ? "opacity-100" : "opacity-60 blur-md",
+        loaded ? "opacity-100" : "opacity-60 blur-[2px]",
         className
       )}
       loading="lazy"

@@ -49,7 +49,7 @@ export default async function RootLayout({ children }) {
     <html lang={locale} className="scroll-smooth">
       <ReactLenis root>
         <body
-          className={`${bricolage.variable} ${inter.variable} font-sans antialiased bg-background-aziz`}
+          className={`${bricolage.variable} ${inter.variable} font-sans antialiased bg-background`}
         >
           <NextIntlClientProvider messages={messages}>
             <main className="relative">

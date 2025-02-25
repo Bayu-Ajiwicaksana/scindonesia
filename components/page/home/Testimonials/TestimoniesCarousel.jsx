@@ -29,9 +29,9 @@ export default function TestimoniesCarousel({ children, className, ...props }) {
       className="w-full"
     >
       {/* <div className="absolute top-0 left-0 w-full h-full flex z-[1]">
-        <div className="h-full w-1/3 bg-gradient-to-r from-background-aziz to-transparent"></div>
+        <div className="h-full w-1/3 bg-gradient-to-r from-background to-transparent"></div>
         <div className="h-full w-1/3"></div>
-        <div className="h-full w-1/3 bg-gradient-to-r from-transparent to-background-aziz"></div>
+        <div className="h-full w-1/3 bg-gradient-to-r from-transparent to-background"></div>
       </div> */}
       <CarouselContent className="">
         {testimonies.map((t, i) => (

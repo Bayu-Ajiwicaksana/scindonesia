@@ -22,7 +22,6 @@ export default {
         serif: ["var(--font-bricolage)"],
       },
       colors: {
-        "background-aziz": "hsl(var(--background-aziz))",
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
         card: {
@@ -35,9 +34,11 @@ export default {
         },
         primary: {
           DEFAULT: "hsl(var(--primary))",
+          light: "hsl(var(--primary-light))",
           foreground: "hsl(var(--primary-foreground))",
         },
         "primary-accent": "hsl(var(--primary-accent))",
+        "primary-accent-darker": "hsl(var(--primary-accent-darker))",
         secondary: {
           DEFAULT: "hsl(var(--secondary))",
           foreground: "hsl(var(--secondary-foreground))",

@@ -80,7 +80,7 @@ export default function NavBar({ t, children, className, ...props }) {
   return (
     <motion.div
       className={cn(
-        "fixed lg:sticky w-full xl:px-8 z-50 lg:mb-2 bg-background lg:bg-transparent shadow-xl lg:shadow-none py-5 px-3 lg:py-0 lg:px-0"
+        "fixed lg:sticky w-full xl:px-3 z-50 lg:mb-2 bg-background lg:bg-transparent shadow-xl lg:shadow-none py-5 px-3 lg:py-0 lg:px-0"
       )}
       initial={{
         top: topVal,
@@ -121,7 +121,7 @@ export default function NavBar({ t, children, className, ...props }) {
         <div className="lg:hidden flex items-center justify-end">
           <Sheet open={openSheet} onOpenChange={setOpenSheet}>
             <SheetTrigger>
-              <Tally3 className="size-8 rotate-90 stroke-2 text-muted-foreground" />
+              <Tally3 className="size-8 rotate-90 stroke-2 text-primary" />
             </SheetTrigger>
             <SheetContent className="w-screen p-0" closeBtnClassName="size-10">
               <SheetHeader className={"hidden"}>

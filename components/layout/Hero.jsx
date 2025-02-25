@@ -14,6 +14,7 @@ export default function Hero({
   children,
   className = { section: "", container: "" },
   bgClass,
+  imgClass,
   ...props
 }) {
   const targetScroll = useRef(null);
@@ -23,12 +24,9 @@ export default function Hero({
   });
   const { isLG } = useMediaQuery();
   return (
-    <Section className={cn("", className.section)}>
+    <Section className={cn("py-0", className.section)}>
       <Container
-        className={cn(
-          "h-screen lg:h-[90vh] xl:pb-5 pt-0 pb-2 xl:pt-2",
-          className.container
-        )}
+        className={cn("h-[90vh] px-0", className.container)}
         {...props}
       >
         <div
@@ -42,6 +40,7 @@ export default function Hero({
             fromTop={isLG ? "-30%" : "-10%"}
             toTop={isLG ? "30%" : "10%"}
             className={bgClass}
+            imgClassName={imgClass}
           />
           {/* <Image
             src={bgImage}
