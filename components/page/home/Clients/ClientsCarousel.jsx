@@ -1,16 +1,11 @@
 "use client";
-
-import { cn } from "@/lib/utils";
 import AutoScroll from "embla-carousel-auto-scroll";
 import {
   Carousel,
   CarouselContent,
   CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
 } from "@/components/ui/carousel";
 import { clients } from "@/lib/data";
-import Image from "next/image";
 import OpImage from "@/components/OpImage";
 
 export default function ClientsCarousel({ children, className, ...props }) {

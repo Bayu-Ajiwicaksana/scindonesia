@@ -3,13 +3,9 @@ import { useRef } from "react";
 
 import { cn } from "@/lib/utils";
 import Section from "@/components/layout/Section";
-import Container from "@/components/layout/Container";
-import Image from "next/image";
-import FooterBg from "@/public/img/contents/footer-bg.webp";
 import { Button, buttonVariants } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 import AppLogo from "@/components/AppLogo";
-import ParallaxBg from "@/components/animation/ParallaxBg";
 
 import { useScroll } from "motion/react";
 

@@ -30,7 +30,7 @@ export default function Hero({
         {...props}
       >
         <div
-          className="relative h-full w-full rounded-b-[32px] md:rounded-[32px] overflow-hidden"
+          className="relative h-full w-full rounded-b-[32px] md:rounded-none overflow-hidden"
           ref={targetScroll}
         >
           <ParallaxBg

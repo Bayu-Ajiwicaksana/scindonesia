@@ -1,5 +1,3 @@
-import { cn } from "@/lib/utils";
-import AboutUsHeroBg from "@/public/img/contents/skills_experience.webp";
 import Hero from "@/components/layout/Hero";
 import MoveDown from "@/components/button/MoveDown";
 import { useTranslations } from "next-intl";

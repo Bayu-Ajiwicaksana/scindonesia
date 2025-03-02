@@ -1,17 +1,9 @@
-import DynamicIcon from "@/components/DynamicIcon";
+import ContactUsBtn from "@/components/button/ContactUsBtn";
 import Container from "@/components/layout/Container";
 import Section from "@/components/layout/Section";
 import OpImage from "@/components/OpImage";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
 import { focusAreas } from "@/lib/data";
 import { cn } from "@/lib/utils";
 
@@ -22,7 +14,7 @@ export default function OurFocusAreas({ children, className, ...props }) {
         <Badge
           variant={"outline"}
           className={
-            "text-primary-accent-darker/45 border-primary-accent-darker/45 text-sm py-2 px-6"
+            "text-primary-accent-darker/45 border-primary-accent-darker/45 text-sm md:text-base py-2 px-6"
           }
         >
           What We Offered
@@ -34,34 +26,54 @@ export default function OurFocusAreas({ children, className, ...props }) {
           <p className="text-lg mx-auto text-center">
             We specialize in 5 key areas to drive sustainable impact
           </p>
-          <div className="space-y-10 !mt-10 !mb-10">
+          <div className="flex flex-col gap-y-10 !mt-10 !mb-10 md:flex-row md:flex-wrap md:*:basis-1/2 xl:*:basis-1/3 md:justify-center">
             {focusAreas.map((area, index) => (
               <div
-                className="flex flex-col items-center gap-y-3 text-center"
+                className="flex flex-col w-full items-center gap-y-3 text-center"
                 key={`programs-${area.key}`}
               >
                 <OpImage
-                  src={area.img}
+                  src={area.icon}
                   alt={area.title}
-                  className="w-3/4 mx-auto"
+                  className="w-3/4 md:w-auto md:h-[200px] mx-auto"
                 />
+                {/* <div className="contents md:block xl:contents md:space-y-3 xl:space-y-0 md:basis-3/5 xl:basis-full"> */}
                 <h3 className="text-2xl font-semibold text-primary font-serif">
                   {area.title}
                 </h3>
-                <p className="w-4/5 text-lg">{area.description}</p>
+                <p className="w-full xl:w-4/5 md:text-lg">{area.subtitle}</p>
+                {/* <p className="w-full xl:w-4/5 md:text-lg">
+                    {area.description}
+                  </p> */}
+                {/* <div className=" flex flex-col rounded-2xl bg-secondary py-2.5 px-4 gap-3">
+                    {area.SDGs.map((sdg, index) => (
+                      <Button
+                        variant="link"
+                        className="h-fit w-fit p-0 text-wrap items-center text-start text-xs [&_svg]:size-3"
+                        key={`programs-${area.key}-sdgs-${index}`}
+                        asChild
+                      >
+                        <Link href={sdg.href} target="_blank">
+                          SDGs {sdg.no} : {sdg.title}
+                          <ArrowUpRightFromSquare className="" />
+                        </Link>
+                      </Button>
+                    ))}
+                  </div> */}
+                {/* </div> */}
               </div>
             ))}
           </div>
-          <div className="flex flex-col items-center gap-3 !mt-14">
-            <Button className="bg-primary-accent-darker text-white hover:bg-primary-accent w-full h-fit text-lg px-8 py-4">
+          <div className="flex flex-col md:flex-row items-center xl:justify-center gap-3 !mt-14">
+            <Button className="bg-primary-accent-darker text-white hover:bg-primary-accent w-full xl:w-fit h-fit text-lg px-8 py-4">
               See Our Programs
             </Button>
-            <Button
+            <ContactUsBtn
               variant="outline"
-              className="bg-transparent border-primary text-primary hover:bg-primary hover:text-primary-foreground w-full h-fit text-lg px-8 py-4 "
+              className="bg-transparent border-primary text-primary hover:bg-primary hover:text-primary-foreground w-full xl:w-fit h-fit text-lg px-8 py-4 "
             >
               Schedule a Consultation
-            </Button>
+            </ContactUsBtn>
           </div>
         </div>
       </Container>

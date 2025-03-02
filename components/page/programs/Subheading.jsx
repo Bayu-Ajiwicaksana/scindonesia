@@ -3,12 +3,7 @@ import ParagraphFade from "@/components/animation/ParagraphFade";
 import Container from "@/components/layout/Container";
 import Section from "@/components/layout/Section";
 import { cn } from "@/lib/utils";
-import {
-  useScroll,
-  useTransform,
-  motion,
-  useMotionTemplate,
-} from "motion/react";
+import { useScroll } from "motion/react";
 import { useRef } from "react";
 
 export default function Subheading({
@@ -24,7 +19,7 @@ export default function Subheading({
   });
 
   return (
-    <Section className={cn("py-8", className)} ref={targetScroll}>
+    <Section className={cn("", className)} ref={targetScroll}>
       <Container
         className={
           "min-h-[80vh] p-8 flex flex-col justify-center items-center gap-10 border border-border/45 rounded-3xl"

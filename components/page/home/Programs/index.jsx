@@ -2,7 +2,6 @@ import Container from "@/components/layout/Container";
 import Section from "@/components/layout/Section";
 import { cn } from "@/lib/utils";
 import ProgramWrapper from "./ProgramWrapper";
-// import { useLocale, useTranslations } from "next-intl";
 import { getAllPrograms } from "@/lib/actions/programs/get";
 import { getLocale, getTranslations } from "next-intl/server";
 

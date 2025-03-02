@@ -1,5 +1,3 @@
-import { cn } from "@/lib/utils";
-import WorksHeroBg from "@/public/img/contents/works-hero-bg.webp";
 import Hero from "@/components/layout/Hero";
 import MoveDown from "@/components/button/MoveDown";
 import { useTranslations } from "next-intl";
@@ -8,7 +6,7 @@ export default function WorksHero({ children, className, ...props }) {
   const t = useTranslations("page.works");
   return (
     <Hero
-      bgImage={"/img/contents/works-hero-bg.webp"}
+      bgImage={"/img/contents/works-hero-bg"}
       bgAlt={"SCI's Works Page Hero Background"}
       bgClass={"brightness-50"}
       className={{

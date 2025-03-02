@@ -18,10 +18,8 @@ import {
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { useCallback, useEffect, useMemo } from "react";
-import { Send, SendHorizonal } from "lucide-react";
-// import { router, usePage } from "@inertiajs/react";
-import toast from "react-hot-toast";
+import { useEffect, useMemo } from "react";
+import { Send } from "lucide-react";
 import { z } from "zod";
 import { useLocale, useTranslations } from "next-intl";
 

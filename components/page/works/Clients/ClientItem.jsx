@@ -24,6 +24,7 @@ export default function ClientItem({ client, index }) {
           src={client.logo}
           alt={client.name}
           className="object-contain h-full w-full"
+          isLogo={true}
         />
         {/* <Image
           src={client.logo}

@@ -2,7 +2,6 @@
 import { motion, progress, useTransform } from "motion/react";
 // import { useRef } from "react";
 import { cn } from "@/lib/utils";
-import Image from "next/image";
 import OpImage from "@/components/OpImage";
 
 export default function ProgramItem({

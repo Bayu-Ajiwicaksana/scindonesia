@@ -18,7 +18,7 @@ export default function ContactUsBtn({
   return (
     <Button
       className={cn(
-        // "focus-visible:ring-green-600 bg-green-600 hover:bg-green-500",
+        "w-full h-fit text-lg px-6 py-3 border border-primary",
         className
       )}
       {...props}

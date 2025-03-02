@@ -1,10 +1,10 @@
 import { cn } from "@/lib/utils";
-import LogoExp from "@/public/img/logo/logo_exp.png";
-import LogoExpWhite from "@/public/img/logo/logo_exp-white.png";
-import LogoComp from "@/public/img/logo/logo_comp.png";
-import LogoCompWhite from "@/public/img/logo/logo_comp-white.png";
-import Logo from "@/public/img/logo/logo.png";
-import LogoWhite from "@/public/img/logo/logo-white.png";
+// import LogoExp from "@/public/img/logo/logo_exp.png";
+// import LogoExpWhite from "@/public/img/logo/logo_exp-white.png";
+// import LogoComp from "@/public/img/logo/logo_comp.png";
+// import LogoCompWhite from "@/public/img/logo/logo_comp-white.png";
+// import Logo from "@/public/img/logo/logo.png";
+// import LogoWhite from "@/public/img/logo/logo-white.png";
 import Link from "next/link";
 import OpImage from "./OpImage";
 
@@ -29,6 +29,7 @@ export default function AppLogo({ type = "exp", asLink = true, className }) {
         src={imgSrc[type]}
         alt="Sirkular Center Indonesia Logo"
         className={cn("", className)}
+        isLogo={true}
       />
       {/* <Image
         src={imgSrc["comp"]}
@@ -42,6 +43,7 @@ export default function AppLogo({ type = "exp", asLink = true, className }) {
         src={imgSrc[type]}
         alt="Sirkular Center Indonesia Logo"
         className={cn("", className)}
+        isLogo={true}
       />
       {/* <Image
         src={imgSrc["comp"]}

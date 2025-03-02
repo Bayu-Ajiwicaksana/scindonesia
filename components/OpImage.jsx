@@ -1,37 +1,29 @@
-"use client";
-
 import { cn } from "@/lib/utils";
-import { useState, useEffect } from "react";
 
-const OpImage = ({ src, alt = "", className = "" }) => {
-  const [loaded, setLoaded] = useState(false);
-  console.log(src);
-
-  // Generate LQIP (Low-Quality Image Placeholder) by appending "-lqip.webp"
-  const lqipSrc = src.replace(".webp", "_lqip.webp");
-
-  useEffect(() => {
-    const img = new Image();
-    img.src = src; // Load the actual image
-    img.onload = () => setLoaded(true);
-  }, [src]);
-
-  return (
+const OpImage = ({ src, alt = "", className = "", isLogo = false }) => {
+  const [newSrc] = src.split(".");
+  return isLogo ? (
     <img
-      src={loaded ? src : lqipSrc}
-      // srcSet={`
-      //   ${src.replace(".webp", "-400w.webp")} 400w,
-      //   ${src.replace(".webp", "-800w.webp")} 800w,
-      //   ${src.replace(".webp", "-1200w.webp")} 1200w,
-      //   ${src.replace(".webp", "-1600w.webp")} 1600w
-      // `}
-      // sizes="(max-width: 600px) 100vw, (max-width: 1200px) 50vw, 33vw"
+      src={src}
       alt={alt}
-      className={cn(
-        "object-cover transition-opacity duration-500 ease-in-out",
-        loaded ? "opacity-100" : "opacity-60 blur-[2px]",
-        className
-      )}
+      className={className}
+      loading="lazy"
+      decoding="async"
+    />
+  ) : (
+    <img
+      src={`${newSrc}-1200.webp`}
+      srcSet={`
+    ${newSrc}-1200.webp 1200w,
+    ${newSrc}-1600.webp 1600w,
+    ${newSrc}-2000.webp 2000w`}
+      sizes={`(max-width: 480px) 100vw,(max-width: 768px) 90vw,
+    (max-width: 1024px) 70vw,
+    (max-width: 1440px) 50vw,
+    40vw
+  `}
+      alt={alt}
+      className={cn("object-cover", className)}
       loading="lazy"
       decoding="async"
     />

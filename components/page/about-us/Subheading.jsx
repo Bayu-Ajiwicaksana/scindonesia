@@ -3,12 +3,7 @@ import ParagraphFade from "@/components/animation/ParagraphFade";
 import Container from "@/components/layout/Container";
 import Section from "@/components/layout/Section";
 import { cn } from "@/lib/utils";
-import {
-  useScroll,
-  useTransform,
-  motion,
-  useMotionTemplate,
-} from "motion/react";
+import { useScroll } from "motion/react";
 import { useRef } from "react";
 
 export default function Subheading({

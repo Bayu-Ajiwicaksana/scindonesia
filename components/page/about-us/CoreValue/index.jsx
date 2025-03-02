@@ -3,13 +3,12 @@ import Container from "@/components/layout/Container";
 import Section from "@/components/layout/Section";
 import { cn } from "@/lib/utils";
 import { coreValues } from "@/lib/data";
-import { Fragment, useState, useRef, useEffect, useMemo } from "react";
-import { Button, buttonVariants } from "@/components/ui/button";
+import { Fragment, useState, useRef, useEffect } from "react";
+import { buttonVariants } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 import {
   motion,
   useInView,
-  useMotionValue,
   useScroll,
   useSpring,
   useTransform,

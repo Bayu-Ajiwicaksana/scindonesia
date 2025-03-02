@@ -29,7 +29,7 @@ export default function Home() {
           Your CSR efforts should do more than check a box—they should make a
           difference.
         </CTASubheading>
-        <CTABtn>Get in touch</CTABtn>
+        <CTABtn className={"w-fit border border-primary"}>Get in touch</CTABtn>
       </FinalCTA>
     </>
   );

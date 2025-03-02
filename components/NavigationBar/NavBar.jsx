@@ -64,8 +64,6 @@ export default function NavBar({ t, children, className, ...props }) {
     },
   ];
 
-  const { isLG } = useMediaQuery();
-
   useMotionValueEvent(scrollY, "change", (latest) => {
     const diff = latest - lastY.current;
     if (Math.abs(diff) > 20) {
@@ -75,18 +73,16 @@ export default function NavBar({ t, children, className, ...props }) {
     }
   });
 
-  const topVal = isLG ? "8px" : "0px";
-
   return (
     <motion.div
       className={cn(
-        "fixed lg:sticky w-full xl:px-3 z-50 lg:mb-2 bg-background lg:bg-transparent shadow-xl lg:shadow-none py-5 px-3 lg:py-0 lg:px-0"
+        "fixed w-full z-50 lg:mb-2 bg-white shadow-xl py-5 xl:py-3 px-3"
       )}
       initial={{
-        top: topVal,
+        top: "0px",
       }}
       animate={{
-        top: isScrolled ? "-50%" : topVal,
+        top: isScrolled ? "-50%" : "0%",
         // backgroundColor: isScrolled ? "hsl(var(--background))" : "transparent",
         // borderRadius: "0px 0px 20px 20px",
         transition: {
@@ -97,7 +93,7 @@ export default function NavBar({ t, children, className, ...props }) {
     >
       <Container
         className={cn(
-          "w-full grid grid-cols-2 lg:flex lg:justify-between lg:items-center py-0 bg-background xl:px-3 xl:py-2 lg: rounded-2xl lg:shadow-xl",
+          "w-full grid grid-cols-2 lg:flex lg:justify-between lg:items-center py-0",
           // isScrolled ? "shadow-none" : "shadow-xl",
           className
         )}
@@ -116,7 +112,9 @@ export default function NavBar({ t, children, className, ...props }) {
         </div>
         <div className="items-center gap-2 hidden lg:flex">
           <LocaleSwitch />
-          <ContactUsBtn />
+          <ContactUsBtn
+            className={"text-sm px-5 py-2.5 border border-primary"}
+          />
         </div>
         <div className="lg:hidden flex items-center justify-end">
           <Sheet open={openSheet} onOpenChange={setOpenSheet}>
@@ -180,11 +178,17 @@ export default function NavBar({ t, children, className, ...props }) {
 }
 
 function NavItems({ route, className, ...props }) {
+  const pathname = usePathname();
   return (
     <NavigationMenuItem {...props}>
       <Link href={route.url} legacyBehavior passHref>
         <NavigationMenuLink
-          className={cn(navigationMenuTriggerStyle(), "", className)}
+          className={cn(
+            navigationMenuTriggerStyle(),
+            "bg-white",
+            pathname === route.url ? "" : "text-zinc-400",
+            className
+          )}
         >
           {route.label}
         </NavigationMenuLink>

@@ -4,12 +4,11 @@ import {
   Card,
   CardContent,
   CardDescription,
-  CardFooter,
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
-import { Building2, MapPin, Sparkles } from "lucide-react";
+import { Building2, Sparkles } from "lucide-react";
 import TextExpander from "@/components/TextExpander";
 import useMediaQuery from "@/hooks/useMediaQuery";
 import { useAnimate, useInView } from "motion/react";
