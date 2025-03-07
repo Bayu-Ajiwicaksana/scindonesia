@@ -54,9 +54,11 @@ export default function ProgramBgContainer({
                 key={`programs-${program.slug}-sdg-${sdg.no}`}
                 href={sdg.href}
                 target="_blank"
-                className="bg-primary-accent border-primary-accent-darker text-zinc-900 hover:bg-white hover:text-primary-accent-darker gap-2"
+                className="bg-primary-accent border-primary-accent-darker text-zinc-900 hover:bg-white hover:text-primary-accent-darker gap-2 w-fit"
               >
-                SDGs {sdg.no} : {sdg.title}
+                <span>
+                  SDGs {sdg.no} : {sdg.title}
+                </span>
                 <ArrowUpRightFromSquare className="size-3" />
               </BadgeLink>
             ))}

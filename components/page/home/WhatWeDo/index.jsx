@@ -60,7 +60,7 @@ export default function WhatWeDo({ children, className, ...props }) {
             </Alert>
           </div>
         </div>
-        <Button className="basis-full border border-primary w-full h-fit text-lg px-6 py-3 hover:bg-white hover:text-primary">
+        <Button className="basis-full md:basis-1/2 md:ms-auto border border-primary w-full h-fit text-lg px-6 py-3 hover:bg-white hover:text-primary">
           Explore Our Works
         </Button>
       </Container>

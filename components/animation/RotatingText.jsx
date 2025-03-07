@@ -178,7 +178,7 @@ const RotatingText = forwardRef((props, ref) => {
           className={cn(
             splitBy === "lines"
               ? "flex flex-col w-full"
-              : "flex flex-wrap whitespace-pre-wrap relative"
+              : "flex flex-wrap whitespace-pre-wrap relative justify-center"
           )}
           layout
           aria-hidden="true"

@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev --turbopack -H 192.168.159.118",
+    "dev": "next dev --turbopack -H localhost",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
@@ -61,8 +61,14 @@
     "react-hook-form": "^7.54.2",
     "react-hot-toast": "^2.5.2",
     "react-international-phone": "^4.5.0",
+    "react-markdown": "^10.0.1",
     "react-resizable-panels": "^2.1.7",
+    "react-social-icons": "^6.22.0",
     "recharts": "^2.15.0",
+    "rehype-autolink-headings": "^7.1.0",
+    "rehype-slug": "^6.0.0",
+    "remark-breaks": "^4.0.0",
+    "remark-gfm": "^4.0.1",
     "sonner": "^1.7.2",
     "tailwind-merge": "^2.6.0",
     "tailwindcss-animate": "^1.0.7",
@@ -71,6 +77,7 @@
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
+    "@tailwindcss/typography": "^0.5.16",
     "eslint": "^9",
     "eslint-config-next": "15.1.6",
     "postcss": "^8",
