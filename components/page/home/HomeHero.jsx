@@ -14,10 +14,10 @@ export default function HomeHero({ children, className, ...props }) {
       // imgClass={"object-bottom"}
       className={{
         section: "px-0",
-        container: "md:h-screen",
+        container: "md:min-h-min md:h-screen",
       }}
     >
-      <div className="flex flex-col items-center justify-center h-full px-6 gap-7 text-center relative pt-24 md:pt-0 pb-16">
+      <div className="flex flex-col items-center justify-center h-full px-6 gap-7 text-center relative pt-24 pb-16">
         <h1 className="font-serif text-3xl md:text-5xl text-white font-semibold md:w-3/4">
           Impact yang Berarti Dimulai dari{" "}
           <span className="text-primary-light">Pemahaman yang Benar</span>
@@ -26,13 +26,13 @@ export default function HomeHero({ children, className, ...props }) {
           We help companies design and implement CSR programs that are
           strategic, sustainable, and truly benefit local communities.
         </p> */}
-        <RotatingText
+        {/* <RotatingText
           texts={[
             "Impact bukan sekadar hasil, tetapi sebuah perubahan yang nyata. Impact lahir dari kesadaran akan masalah yang ada, strategi yang tepat dalam menyelesaikannya, serta komitmen untuk menciptakan manfaat berkelanjutan.",
             "Impact seharusnya tercipta dengan perencanaan yang terukur, berbasis data dan riset, agar dampaknya dapat berlangsung dalam jangka panjang. Impact bukan hanya tentang memberikan sesuatu, tetapi membangun ekosistem yang memungkinkan perubahan positif terus berkembang.",
             "Impact harus dirasakan oleh mereka yang benar-benar membutuhkan—masyarakat yang terdampak, lingkungan yang terjaga, serta seluruh pemangku kepentingan yang terlibat. Bukan hanya untuk memenuhi kewajiban sosial, tetapi untuk menciptakan perubahan yang adil, inklusif, dan berkelanjutan.",
           ]}
-          mainClassName="text-white text-lg md:text-left md:w-4/5"
+          mainClassName="lg:hidden text-white text-lg md:text-left md:w-4/5 h-[40%]"
           staggerFrom={"first"}
           initial={{ y: "100%", opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
@@ -42,7 +42,29 @@ export default function HomeHero({ children, className, ...props }) {
           splitLevelClassName="overflow-hidden pb-0.5 sm:pb-1 md:pb-1"
           transition={{ type: "spring", damping: 30, stiffness: 400 }}
           rotationInterval={10000}
-        />
+        /> */}
+        <div className="hidden xl:flex justify-center *:basis-1/4 italic gap-6 flex-wrap text-zinc-300">
+          <p>
+            Impact bukan sekadar hasil, tetapi sebuah perubahan yang nyata.
+            Impact lahir dari kesadaran akan masalah yang ada, strategi yang
+            tepat dalam menyelesaikannya, serta komitmen untuk menciptakan
+            manfaat berkelanjutan.
+          </p>
+          <p>
+            Impact seharusnya tercipta dengan perencanaan yang terukur, berbasis
+            data dan riset, agar dampaknya dapat berlangsung dalam jangka
+            panjang. Impact bukan hanya tentang memberikan sesuatu, tetapi
+            membangun ekosistem yang memungkinkan perubahan positif terus
+            berkembang.
+          </p>
+          <p>
+            Impact harus dirasakan oleh mereka yang benar-benar
+            membutuhkan—masyarakat yang terdampak, lingkungan yang terjaga,
+            serta seluruh pemangku kepentingan yang terlibat. Bukan hanya untuk
+            memenuhi kewajiban sosial, tetapi untuk menciptakan perubahan yang
+            adil, inklusif, dan berkelanjutan.
+          </p>
+        </div>
         <div className="flex flex-col md:flex-row gap-5 mt-5">
           <Button className="w-full h-fit text-xl px-8 py-4 hover:bg-white hover:text-primary">
             Discover Our Approach

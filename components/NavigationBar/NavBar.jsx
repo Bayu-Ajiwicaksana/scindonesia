@@ -30,7 +30,15 @@ import Container from "@/components/layout/Container";
 import LocaleSwitch from "@/components/LocaleSwitch";
 import { useEffect, useMemo, useRef, useState } from "react";
 import useMediaQuery from "@/hooks/useMediaQuery";
-import { ArrowUpRight, Tally3 } from "lucide-react";
+import {
+  ArrowUpRight,
+  BookMarked,
+  ClipboardList,
+  FileChartColumn,
+  Newspaper,
+  Tally3,
+  Waypoints,
+} from "lucide-react";
 import { buttonVariants } from "@/components/ui/button";
 import { usePathname } from "next/navigation";
 
@@ -61,6 +69,39 @@ export default function NavBar({ t, children, className, ...props }) {
       key: "about-us",
       label: t.aboutUs,
       url: "/about-us",
+    },
+  ];
+
+  const resourcesItem = [
+    {
+      key: "articles",
+      label: "Articles",
+      url: "/articles",
+      icon: Newspaper,
+    },
+    {
+      key: "theory",
+      label: "Theory",
+      url: "/theory",
+      icon: Waypoints,
+    },
+    {
+      key: "whitepapers-and-reports",
+      label: "Whitepapers & Reports",
+      url: "/whitepapers-and-reports",
+      icon: FileChartColumn,
+    },
+    {
+      key: "ebooks-and-guides",
+      label: "Ebooks and Guides",
+      url: "/ebooks-and-guides",
+      icon: BookMarked,
+    },
+    {
+      key: "case-study",
+      label: "Case Study",
+      url: "/case-study",
+      icon: ClipboardList,
     },
   ];
 
@@ -107,6 +148,25 @@ export default function NavBar({ t, children, className, ...props }) {
               {navItems.map((nav) => (
                 <NavItems route={nav} key={nav.key} />
               ))}
+              <NavigationMenuItem>
+                <NavigationMenuTrigger
+                  className={cn(
+                    navigationMenuTriggerStyle(),
+                    "bg-white text-zinc-600 data-[state=open]:text-current"
+                  )}
+                >
+                  Resources
+                </NavigationMenuTrigger>
+                <NavigationMenuContent>
+                  <ul className="grid gap-3 p-6 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
+                    {resourcesItem.map((item, index) => (
+                      <li key={item.key}>
+                        <ListItem route={item} />
+                      </li>
+                    ))}
+                  </ul>
+                </NavigationMenuContent>
+              </NavigationMenuItem>
             </NavigationMenuList>
           </NavigationMenu>
         </div>
@@ -177,6 +237,26 @@ export default function NavBar({ t, children, className, ...props }) {
   );
 }
 
+function ListItem({ route, className, ...props }) {
+  const pathname = usePathname();
+  const Icon = route.icon;
+  return (
+    <Link href={route.url} legacyBehavior passHref {...props}>
+      <NavigationMenuLink
+        className={cn(
+          navigationMenuTriggerStyle(),
+          "bg-white gap-x-2",
+          pathname === route.url ? "" : "text-zinc-600",
+          className
+        )}
+      >
+        <Icon className="size-4" />
+        {route.label}
+      </NavigationMenuLink>
+    </Link>
+  );
+}
+
 function NavItems({ route, className, ...props }) {
   const pathname = usePathname();
   return (
@@ -186,7 +266,7 @@ function NavItems({ route, className, ...props }) {
           className={cn(
             navigationMenuTriggerStyle(),
             "bg-white",
-            pathname === route.url ? "" : "text-zinc-400",
+            pathname === route.url ? "" : "text-zinc-600",
             className
           )}
         >
