@@ -16,7 +16,14 @@ export default function LinkBtn({
   const Icon = icon ?? ArrowUpRight;
   const pathname = usePathname();
   return (
-    <Button className={cn("", className)} {...props} asChild>
+    <Button
+      className={cn(
+        "w-full h-fit text-lg px-6 py-3 border border-primary transition-all [&_svg]:rotate-0 [&_svg]:hover:rotate-45 [&_svg]:hover:transition-transform",
+        className
+      )}
+      {...props}
+      asChild
+    >
       <Link href={withPath ? pathname + "/" + href : href}>
         {children ?? "Link"} <ArrowUpRight />
       </Link>

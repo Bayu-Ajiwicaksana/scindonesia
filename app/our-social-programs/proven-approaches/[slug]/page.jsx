@@ -1,4 +1,4 @@
-import ArticleBody from "@/components/page/proven-approaches/ArticleBody";
+import ArticleBody from "@/components/pageOld/proven-approaches/ArticleBody";
 import { getSocialProofArticle } from "@/lib/actions/programs/get";
 import { cn } from "@/lib/utils";
 

@@ -1,6 +1,6 @@
-import Clients from "@/components/page/works/Clients";
-import WorkList from "@/components/page/works/WorkList";
-import WorksHero from "@/components/page/works/WorksHero";
+import Clients from "@/components/pageOld/works/Clients";
+import WorkList from "@/components/pageOld/works/WorkList";
+import WorksHero from "@/components/pageOld/works/WorksHero";
 
 export default function OurWorks() {
   return (

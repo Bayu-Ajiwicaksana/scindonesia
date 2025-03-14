@@ -26,7 +26,7 @@ export default function Hero({
   return (
     <Section className={cn("py-0", className.section)}>
       <Container
-        className={cn("min-h-[95vh] px-0", className.container)}
+        className={cn("h-screen min-h-screen px-0", className.container)}
         {...props}
       >
         <div

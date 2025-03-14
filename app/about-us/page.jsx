@@ -1,8 +1,8 @@
-import AboutUsHero from "@/components/page/about-us/AboutUsHero";
-import CoreValue from "@/components/page/about-us/CoreValue";
-import OurMission from "@/components/page/about-us/OurMission";
-import OurVision from "@/components/page/about-us/OurVision";
-import Subheading from "@/components/page/about-us/Subheading";
+import AboutUsHero from "@/components/pageOld/about-us/AboutUsHero";
+import CoreValue from "@/components/pageOld/about-us/CoreValue";
+import OurMission from "@/components/pageOld/about-us/OurMission";
+import OurVision from "@/components/pageOld/about-us/OurVision";
+import Subheading from "@/components/pageOld/about-us/Subheading";
 import { useTranslations } from "next-intl";
 
 export default function AboutUs({ children, className, ...props }) {

@@ -18,7 +18,7 @@ export default function ContactUsBtn({
   return (
     <Button
       className={cn(
-        "w-full h-fit text-lg px-6 py-3 border border-primary",
+        "w-full h-fit text-lg px-6 py-3 border border-primary transition-all [&_svg]:rotate-0 [&_svg]:hover:rotate-45 [&_svg]:hover:transition-transform",
         className
       )}
       {...props}

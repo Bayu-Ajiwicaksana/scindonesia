@@ -1,7 +1,7 @@
 import Container from "@/components/layout/Container";
 import Section from "@/components/layout/Section";
 import OpImage from "@/components/OpImage";
-import ContactUsForm from "@/components/page/contact-us/ContactUsForm";
+import ContactUsForm from "@/components/pageOld/contact-us/ContactUsForm";
 import { cn } from "@/lib/utils";
 import { useTranslations } from "next-intl";
 

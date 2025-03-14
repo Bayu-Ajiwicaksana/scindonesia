@@ -3,11 +3,11 @@ import FinalCTA, {
   CTAHeading,
   CTASubheading,
 } from "@/components/FinalCTA";
-import ProgramList from "@/components/page/programs/ProgramList";
-import ProgramsHero from "@/components/page/programs/ProgramsHero";
-import SocialProof from "@/components/page/programs/SocialProof";
-import Subheading from "@/components/page/programs/Subheading";
-import WhyEvolve from "@/components/page/programs/WhyEvolve";
+import ProgramList from "@/components/pageOld/programs/ProgramList";
+import ProgramsHero from "@/components/pageOld/programs/ProgramsHero";
+import SocialProof from "@/components/pageOld/programs/SocialProof";
+import Subheading from "@/components/pageOld/programs/Subheading";
+import WhyEvolve from "@/components/pageOld/programs/WhyEvolve";
 import { useTranslations } from "next-intl";
 // import { Button } from "@/components/ui/button";
 // import Image from "next/image";
